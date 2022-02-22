@@ -1,0 +1,15 @@
+{
+  "name": "p6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install":"concurrently \"cd frontend && npm install\" \"cd backend && npm install\"",
+    "start":"concurrently \"cd frontend && npm start\" \"cd backend && npm start\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
