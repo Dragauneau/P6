@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { isLoggedIn } = require('./middlewares/auth');
 const path = require('path');
 var fs = require('fs')
-var dir = '/images';
+var imagesDir = path.join(__dirname, 'images');
 const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
 
@@ -17,8 +17,8 @@ mongoose.connect(process.env.DB_URL, {
 
 const app = express();
 app.use(express.json());
-if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
+if (!fs.existsSync(imagesDir)){
+    fs.mkdirSync(imagesDir);
 }
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
